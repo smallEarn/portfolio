@@ -1,4 +1,0 @@
-IMAP Protocol
--------------
-
-Help wanted.

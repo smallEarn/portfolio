@@ -1,4 +1,0 @@
-SMTP Protocol
--------------
-
-Help wanted.

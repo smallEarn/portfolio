@@ -1,4 +1,0 @@
-Queue Message
--------------
-
-Help wanted.
