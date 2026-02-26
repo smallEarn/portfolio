@@ -10,11 +10,10 @@ $pcMinWidth: 1200px;
 $spMinWidth: 375px;
 
 :root {
-  --colorText: #0F0F0F;
-  --colorLink: #0F0F0F;
-  --colorMain: #EA5514;
-  --colorGray: #f0f0f0;
-  --colorTheme: #DAE1E4;
-  --fontJA: sans-serif;
-  --fontEN: sans-serif;
+  --colorText: #FBF7F2;
+  --colorTitle: #3C2F2F;
+  --subText: #E6BFBF;
+  --mainfont: 'Zen Maru Gothic', sans-serif;
+  --fontBold: 700;
+  --fontMedium: 500;
 }

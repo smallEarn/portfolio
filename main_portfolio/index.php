@@ -170,7 +170,7 @@ $description = 'ページディスクリプション';
                     <div class="avatarWrap">
                         <div class="avatar">🙂</div>
                     </div>
-                    <h2>Precious Genodeala</h2>
+                    <h1>Precious Genodeala</h1>
                     <p class="role">Software Engineer</p>
                 </div>
 
@@ -212,98 +212,152 @@ $description = 'ページディスクリプション';
         </section>
 
         <section class="main">
-            <div class="main__inner">
-                <div class="main__topbar">
-                    <div class="main__tabs">
-                        <a class="main__tab main__tab--active" href="#">About</a>
-                        <a class="main__tab" href="#">Resume</a>
-                        <a class="main__tab" href="#">Portfolio</a>
-                        <a class="main__tab" href="#">Blog</a>
-                        <a class="main__tab" href="#">Contact</a>
-                    </div>
-                </div>
+  <div class="main__inner">
 
-                <div class="main__header">
-                    <h1 class="main__title">About Me</h1>
-                    <div class="main__underline"></div>
-                </div>
+    <!-- Tabs -->
+    <div class="main__topbar">
+      <div class="main__tabs">
+        <a class="main__tab main__tab--active" href="#" data-tab="about">About</a>
+        <a class="main__tab" href="#" data-tab="resume">Resume</a>
+        <a class="main__tab" href="#" data-tab="portfolio">Portfolio</a>
+        <a class="main__tab" href="#" data-tab="blog">Blog</a>
+        <a class="main__tab" href="#" data-tab="contact">Contact</a>
+      </div>
+    </div>
 
-                <div class="main__about">
-                    <p class="main__text">
-                        A passionate Flutter developer with strong expertise in cross-platform apps, REST APIs,
-                        UI/UX, widgets, and state management solutions. Proven track record in delivering
-                        cutting-edge solutions, including API integration, third-party libraries, and
-                        performance optimization.
-                    </p>
+    <!-- Tab Contents -->
+    <div class="main__content">
 
-                    <br class="main__break" />
+      <!-- ABOUT -->
+      <div class="tab-content active" id="about">
+        <div class="main__header">
+          <h1 class="main__title">About Me</h1>
+          <div class="main__underline"></div>
+        </div>
 
-                    <p class="main__text">
-                        If you're seeking a skilled Flutter developer to breathe life into your project and
-                        exceed your expectations, I am here to collaborate and create magic together.
-                    </p>
-                </div>
+        <div class="main__about">
+          <p class="main__text">
+            A passionate Flutter developer with strong expertise in cross-platform apps, REST APIs,
+            UI/UX, widgets, and state management solutions. Proven track record in delivering
+            cutting-edge solutions, including API integration, third-party libraries, and
+            performance optimization.
+          </p>
 
-                <div class="main__doing">
-                    <h3 class="main__sectionTitle">What I'm Doing</h3>
+          <br class="main__break" />
 
-                    <div class="main__grid">
-                        <article class="main__card">
-                            <div class="main__badge">📱</div>
-                            <div class="main__cardBody">
-                                <h3 class="main__cardTitle">Mobile Apps</h3>
-                                <p class="main__cardText">
-                                    Professional development of applications for Android and iOS.
-                                </p>
-                            </div>
-                        </article>
+          <p class="main__text">
+            If you're seeking a skilled Flutter developer to breathe life into your project and
+            exceed your expectations, I am here to collaborate and create magic together.
+          </p>
+        </div>
 
-                        <article class="main__card">
-                            <div class="main__badge">⌘</div>
-                            <div class="main__cardBody">
-                                <h3 class="main__cardTitle">Web Development</h3>
-                                <p class="main__cardText">
-                                    High-quality development of sites at the professional level.
-                                </p>
-                            </div>
-                        </article>
+        <div class="main__doing">
+          <h3 class="main__sectionTitle">What I'm Doing</h3>
 
-                        <article class="main__card">
-                            <div class="main__badge">✎</div>
-                            <div class="main__cardBody">
-                                <h3 class="main__cardTitle">UI/UX Design</h3>
-                                <p class="main__cardText">
-                                    The most modern and high-quality design made at a professional level.
-                                </p>
-                            </div>
-                        </article>
+          <div class="main__grid">
+            <article class="main__card">
+              <div class="main__badge"><img src="./assets/img/icon-app.svg" alt=""></div>
+              <div class="main__cardBody">
+                <h3 class="main__cardTitle">Mobile Apps</h3>
+                <p class="main__cardText">
+                  Professional development of applications for Android and iOS.
+                </p>
+              </div>
+            </article>
 
-                        <article class="main__card">
-                            <div class="main__badge">🗄</div>
-                            <div class="main__cardBody">
-                                <h3 class="main__cardTitle">Backend Development</h3>
-                                <p class="main__cardText">
-                                    High-performance backend services designed for scalability and seamless UX.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+            <article class="main__card">
+              <div class="main__badge">⌘</div>
+              <div class="main__cardBody">
+                <h3 class="main__cardTitle">Web Development</h3>
+                <p class="main__cardText">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+            </article>
 
-                <div class="main__skills">
-                    <h3 class="main__sectionTitle">Skills</h3>
+            <article class="main__card">
+              <div class="main__badge">✎</div>
+              <div class="main__cardBody">
+                <h3 class="main__cardTitle">UI/UX Design</h3>
+                <p class="main__cardText">
+                  The most modern and high-quality design made at a professional level.
+                </p>
+              </div>
+            </article>
 
-                    <div class="main__skillRow">
-                        <article class="main__skill main__skill--s1">DART</article>
-                        <article class="main__skill main__skill--s2">FLUTTER</article>
-                        <article class="main__skill main__skill--s3">FIREBASE</article>
-                        <article class="main__skill main__skill--s4">API</article>
-                    </div>
+            <article class="main__card">
+              <div class="main__badge">🗄</div>
+              <div class="main__cardBody">
+                <h3 class="main__cardTitle">Backend Development</h3>
+                <p class="main__cardText">
+                  High-performance backend services designed for scalability and seamless UX.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
 
-                    <div class="main__progressLine"></div>
-                </div>
-            </div>
-        </section>
+        <div class="main__skills">
+  <h3 class="main__sectionTitle">Skills</h3>
+
+  <div class="main__skillRow">
+    <article class="main__skill main__skill--s1">DART</article>
+    <article class="main__skill main__skill--s2">FLUTTER</article>
+    <article class="main__skill main__skill--s3">FIREBASE</article>
+    <article class="main__skill main__skill--s4">API</article>
+
+    <!-- you can add more -->
+    <article class="main__skill main__skill--s1">DART</article>
+    <article class="main__skill main__skill--s2">FLUTTER</article>
+    <article class="main__skill main__skill--s3">FIREBASE</article>
+    <article class="main__skill main__skill--s4">API</article>
+  </div>
+
+  <div class="main__progressLine">
+    <div class="main__progressFill"></div>
+  </div>
+</div>
+      </div>
+
+      <!-- RESUME -->
+      <div class="tab-content" id="resume">
+        <div class="main__header">
+          <h1 class="main__title">Resume</h1>
+          <div class="main__underline"></div>
+        </div>
+        <p class="main__text">Resume Section</p>
+      </div>
+
+      <!-- PORTFOLIO -->
+      <div class="tab-content" id="portfolio">
+        <div class="main__header">
+          <h1 class="main__title">Portfolio</h1>
+          <div class="main__underline"></div>
+        </div>
+        <p class="main__text">Portfolio Section</p>
+      </div>
+
+      <!-- BLOG -->
+      <div class="tab-content" id="blog">
+        <div class="main__header">
+          <h1 class="main__title">Blog</h1>
+          <div class="main__underline"></div>
+        </div>
+        <p class="main__text">Blog Section</p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="tab-content" id="contact">
+        <div class="main__header">
+          <h1 class="main__title">Contact</h1>
+          <div class="main__underline"></div>
+        </div>
+        <p class="main__text">Contact Section</p>
+      </div>
+
+    </div>
+  </div>
+</section>  
     </section>
 </section>
 

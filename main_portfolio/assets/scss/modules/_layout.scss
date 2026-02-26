@@ -18,9 +18,9 @@ section.page {
 }
 
 section.shell {
-    max-width: 1400px;
+    max-width: 120rem;
     display: flex;
-    gap: clamp(16px, 2vw, 26px);
+    gap: 2.6rem;
     align-items: stretch;
 }
 
@@ -28,7 +28,7 @@ section.shell {
 .sidebar {
     width: 40rem;
     height: 70rem;
-    background: #F0F8FF;
+    background: #F1E3DD;
     border: 0.1rem solid rgba(255, 255, 255, .10);
     border-radius: 2.2rem;
     box-shadow: 0 2.2rem 6rem rgba(0, 0, 0, .55);
@@ -61,21 +61,25 @@ section.shell {
         gap: 1.2rem;
         padding-top: 0.6rem;
 
-        h2 {
+        h1 {
             margin: 0.4rem 0 0;
-            font-size: 2.2rem;
-            font-weight: 780;
+            color: var(--colorTitle);
+            font-size: 2.3rem;
+            font-weight: var(--fontBold);
+            font-family: var(--mainfont);
         }
 
         .role {
             margin: 0;
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, .65);
-            padding: 0.7rem 1.2rem;
+            font-size: 1.6rem;
+            font-family: var(--mainfont);
+            font-weight: var(--fontBold);
+            color: var(--colorText);
+            padding: 0.3rem 1.2rem;
             border-radius: 99.9rem;
-            background: rgba(0, 0, 0, .25);
+            background: #C48A8A;
             border: 0.1rem solid rgba(255, 255, 255, .08);
-            width: fit-content;
+
         }
     }
 
@@ -91,7 +95,7 @@ section.shell {
         border: 0.1rem solid rgba(255, 255, 255, .10);
         display: grid;
         place-items: center;
-        box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, .35);
+        box-shadow: 0 .4rem 1rem rgba(0, 0, 0, .35);
         position: relative;
 
         &::after {
@@ -103,7 +107,6 @@ section.shell {
             position: absolute;
             right: 1rem;
             bottom: 1rem;
-            box-shadow: 0 0 0 0.3rem rgba(0, 0, 0, .35);
         }
 
         .avatar {
@@ -144,7 +147,7 @@ section.shell {
         align-items: center;
         padding: 1.2rem;
         border-radius: 1.6rem;
-        background: rgba(0, 0, 0, .18);
+        background: #C48A8A;
         border: 0.1rem solid rgba(255, 255, 255, .08);
 
         .iconBox {
@@ -166,18 +169,22 @@ section.shell {
         .contactMeta {
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
+            gap: 0rem;
             min-width: 0;
 
             .label {
-                font-size: 1.1rem;
-                color: rgba(255, 255, 255, .50);
+                font-size: 1.6rem;
+                color: var(--colorText);
+                font-family: var(--mainfont);
+                font-weight: var(--fontBold);
                 letter-spacing: 0.08rem;
             }
 
             .value {
-                font-size: 1.3rem;
-                color: rgba(255, 255, 255, .92);
+                font-size: 1.4rem;
+                color: var(--colorText);
+                font-family: var(--mainfont);
+                font-weight: var(--fontBold);
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -199,8 +206,8 @@ section.shell {
             display: grid;
             place-items: center;
             text-decoration: none;
-            color: rgba(255, 255, 255, .80);
-            background: rgba(0, 0, 0, .18);
+            color: #2C2F2E;
+            background: #C48A8A;
             border: 0.1rem solid rgba(255, 255, 255, .08);
             transition: transform .15s ease, background .15s ease;
 
@@ -212,12 +219,9 @@ section.shell {
     }
 }
 
-
-
 .main {
     flex: 1 1 auto;
-    min-width: 0;
-    background: #F0F8FF;
+    background: #F1E3DD;
     border-radius: 2.2rem;
     box-shadow: 0 2.2rem 6rem rgba(0, 0, 0, .55);
     overflow: hidden;
@@ -252,14 +256,14 @@ section.shell {
         gap: 1rem;
         padding: 1rem;
         border-radius: 1.8rem;
-        background: rgba(0, 0, 0, .22);
+        background: #C48A8A;
         border: 0.1rem solid rgba(255, 255, 255, .08);
     }
 
     &__tab {
         text-decoration: none;
         font-size: 1.3rem;
-        color: rgba(255, 255, 255, .75);
+        color: #2C2F2E;
         padding: 1rem 1.4rem;
         border-radius: 1.4rem;
         transition: background .15s ease, color .15s ease;
@@ -284,19 +288,24 @@ section.shell {
         margin: 0;
         font-size: 3.4rem;
         letter-spacing: 0.02rem;
+        color: var(--colorTitle);
+        font-family: var(--mainfont);
+        font-weight: var(--fontBold);
     }
 
     &__underline {
         width: 3.8rem;
         height: 0.4rem;
         border-radius: 99.9rem;
-        background: #f1c232;
-        margin-top: 1rem;
+        background: #C48A8A;
+        margin-top: 0rem;
     }
 
     &__text {
         margin: 0;
-        color: #1F305E;
+        color: var(--colorTitle);
+        font-family: var(--mainfont);
+        font-weight: var(--fontBold);
         line-height: 1.7;
         font-size: 1.4rem;
         max-width: 74ch;
@@ -305,6 +314,9 @@ section.shell {
     &__sectionTitle {
         margin: 0;
         font-size: 2.2rem;
+        font-family: var(--mainfont);
+        font-weight: var(--fontBold);
+        color: var(--colorTitle);
         margin-bottom: 0.8rem;
     }
 
@@ -316,18 +328,14 @@ section.shell {
     }
 
     &__card {
-        background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, .06),
-            rgba(255, 255, 255, .03)
-        );
+        background: #C48A8A ;
         border: 0.1rem solid rgba(255, 255, 255, .10);
         border-radius: 1.6rem;
         padding: 1.8rem;
         display: flex;
         gap: 1.4rem;
         align-items: flex-start;
-        box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, .28);
+        // box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, .28);
     }
 
     &__badge {
@@ -349,81 +357,70 @@ section.shell {
     &__cardTitle {
         margin: 0 0 0.6rem;
         font-size: 1.6rem;
+        font-family: var(--mainfont);
+        font-weight: var(--fontBold);
+        color: var(--colorText);
     }
 
     &__cardText {
         margin: 0;
-        font-size: 1.3rem;
-        color: rgba(255, 255, 255, .62);
+        font-size: 1.4rem;
+        color: var(--colorText);
+        font-family: var(--mainfont);
+        font-weight: var(--fontBold);
         line-height: 1.6;
         max-width: none;
     }
 
     &__skills {
-        margin-top: 0.6rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-    }
-
-    &__skillRow {
-        display: flex;
-        gap: 1.8rem;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 0.6rem;
-    }
-
-    &__skill {
-        width: 11.8rem;
-        height: 11.8rem;
-        border-radius: 2.6rem;
-        background: rgba(0, 0, 0, .22);
-        border: 0.1rem solid rgba(255, 255, 255, .10);
-        display: grid;
-        place-items: center;
-        box-shadow: 0 1.8rem 4rem rgba(0, 0, 0, .35);
-        user-select: none;
-        font-weight: 800;
-        letter-spacing: 0.05rem;
-
-        &--s1 {
-            background: linear-gradient(135deg, rgba(0, 255, 255, .22), rgba(0, 128, 255, .10));
-        }
-
-        &--s2 {
-            background: linear-gradient(135deg, rgba(0, 200, 255, .20), rgba(0, 60, 255, .10));
-        }
-
-        &--s3 {
-            background: linear-gradient(135deg, rgba(255, 190, 0, .22), rgba(255, 80, 0, .10));
-        }
-
-        &--s4 {
-            background: linear-gradient(135deg, rgba(255, 120, 0, .22), rgba(255, 30, 0, .10));
-        }
-    }
-
-    &__progressLine {
-        margin: 0.6rem auto 0;
-        width: min(52rem, 70%);
-        height: 0.4rem;
-        border-radius: 99.9rem;
-        background: rgba(255, 255, 255, .10);
-        overflow: hidden;
-        position: relative;
-
-        &::after {
-            content: "";
-            position: absolute;
-            left: 12%;
-            top: 0;
-            width: 56%;
-            height: 100%;
-            background: #f1c232;
-            border-radius: 99.9rem;
-        }
-    }
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
+&__skillRow {
+  display: flex;
+  gap: 1.8rem;
+  padding-top: 0.6rem;
 
+  overflow-x: auto;
+  flex-wrap: nowrap;
+
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+&__skillRow::-webkit-scrollbar {
+  display: none;
+}
+
+/* 4 visible cards */
+&__skill {
+  flex: 0 0 calc((100% - 3 * 1.8rem) / 4);
+}
+
+/* Progress line */
+&__progressLine {
+  margin: 0.6rem auto 0;
+  width: min(52rem, 70%);
+  height: 0.4rem;
+  border-radius: 99.9rem;
+  background: rgba(255, 255, 255, .10);
+  overflow: hidden;
+  position: relative;
+}
+
+/* The moving indicator */
+&__progressFill {
+  height: 100%;
+  width: 35%;              /* JS will update this */
+  background: #f1c232;
+  border-radius: 99.9rem;
+  transform: translateX(0);
+  transition: transform 0.12s linear;
+}
+}
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
