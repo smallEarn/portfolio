@@ -1,0 +1,27 @@
+@use "./mixin";
+
+
+:root {
+  --colorText: #FBF7F2;
+  --colorTitle: #3C2F2F;
+  --subText: #E6BFBF;
+  --mainfont: 'Zen Maru Gothic', sans-serif;
+  --fontBold: 700;
+  --fontMedium: 500;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+	font-size: min(62.5%, calc(1000vw/1912));
+  @include mixin.mq(sp) {
+    font-size: calc(1000vw/375);
+  }
+}
+
+body {
+  background-image: url("../assets/img/folio-bg.png");
+  background-color: #FBF7F2;
+}
