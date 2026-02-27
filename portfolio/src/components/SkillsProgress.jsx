@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react";
-import firebaseIcon from "../assets/img/icon-firebase.png";
 import dockerIcon from "../assets/img/icon-docker.png";
 import laravelIcon from "../assets/img/icon-laravel.png";
 import gitIcon from "../assets/img/icon-git.png";
 import htmlIcon from "../assets/img/icon-html.png";
 import cssIcon from "../assets/img/icon-css3.png";
 import javascriptIcon from "../assets/img/icon-javascript.png";
-import reactIcon from "../assets/img/icon-react.png";
-import tailwindIcon from "../assets/img/icon-tailwindcss.png";
-import documentIcon from "../assets/img/icon-document.png";
+import phpIcon from "../assets/img/icon-php.png";
+import mysqlIcon  from "../assets/img/icon-mysql.png";
+import restIcon from "../assets/img/icon-rest.png";
+import securedIcon from "../assets/img/icon-secured.png";
 
 
 export function SkillsProgress() {
@@ -80,24 +80,37 @@ export function SkillsProgress() {
 
       <div className="main__skillRow" ref={rowRef}>
         {/* your skill items */}
-        <article className="main__skill main__skill--s1">
-            <img src={firebaseIcon} alt="Firebase" />
+         <article className="main__skill main__skill--s1">
+          <img src={htmlIcon} alt="HTML" />
         </article>
         <article className="main__skill main__skill--s2">
-            <img src={dockerIcon} alt="Docker" />
+          <img src={cssIcon} alt="CSS" />
         </article>
         <article className="main__skill main__skill--s3">
-            <img src={laravelIcon} alt="Laravel" />
-        </article>
-        <article className="main__skill main__skill--s4">
             <img src={javascriptIcon} alt="Javascript" />
         </article>
-        <article className="main__skill main__skill--s1">
-            <img src={reactIcon} alt="React" />
+         <article className="main__skill main__skill--s4">
+            <img src={phpIcon} alt="Php" />
         </article>
-        <article className="main__skill main__skill--s2">NODE</article>
-        <article className="main__skill main__skill--s3">MYSQL</article>
-        <article className="main__skill main__skill--s4">GIT</article>
+        <article className="main__skill main__skill--s1">
+          <img src={restIcon} alt="RESTAPI" />
+        </article>
+        <article className="main__skills main__skill--s2">
+          <img src={securedIcon} alt="Secured" />
+        </article>
+        <article className="main__skill main__skill--s3">
+            <img src={mysqlIcon} alt="Mysql" />
+        </article>
+        <article className="main__skill main__skill--s4">
+            <img src={dockerIcon} alt="Docker" />
+        </article>
+        <article className="main__skill main__skill--s1">
+            <img src={laravelIcon} alt="Laravel" />
+        </article>
+        <article className="main__skill main__skill--s2">
+          <img src={gitIcon} alt="GIT" />
+        </article>
+
       </div>
 
       <div className="main__progressLine" ref={lineRef}>

@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from "react";
-import { SkillsProgress } from "../pages/SkillsProgress";
-import "./portfolio.scss";
+import { SkillsProgress } from "../components/SkillsProgress";
+import "../styles/portfolio.scss";
 
+import ProfileImage from "../assets/img/profile.png";
+import ResumePage from "./ResumePage";
 export default function Portfolio() {
   const tabs = useMemo(
     () => [
@@ -28,7 +30,7 @@ export default function Portfolio() {
           <div className="inner">
             <div className="profile">
               <div className="avatarWrap">
-                <div className="avatar">🙂</div>
+                <img src={ProfileImage} alt="Profile" />
               </div>
               <h1>Precious Genodeala</h1>
               <p className="role">Software Engineer</p>
@@ -41,7 +43,7 @@ export default function Portfolio() {
                 <div className="iconBox">✉</div>
                 <div className="contactMeta">
                   <span className="label">EMAIL</span>
-                  <span className="value">aakashrajbanshi58@...</span>
+                  <span className="value">joygenodeala@gmail.com</span>
                 </div>
               </div>
 
@@ -49,7 +51,7 @@ export default function Portfolio() {
                 <div className="iconBox">📱</div>
                 <div className="contactMeta">
                   <span className="label">PHONE</span>
-                  <span className="value">+977 9812345678</span>
+                  <span className="value">+63 905 236 8129</span>
                 </div>
               </div>
 
@@ -57,7 +59,7 @@ export default function Portfolio() {
                 <div className="iconBox">📍</div>
                 <div className="contactMeta">
                   <span className="label">LOCATION</span>
-                  <span className="value">Kathmandu, Nepal</span>
+                  <span className="value">Consing Village, Bgry. Caduha-an Cadiz City</span>
                 </div>
               </div>
             </div>
@@ -112,17 +114,17 @@ export default function Portfolio() {
 
                   <div className="main__about">
                     <p className="main__text">
-                      A passionate Flutter developer with strong expertise in
-                      cross-platform apps, REST APIs, UI/UX, widgets, and state
-                      management solutions. Proven track record in delivering
-                      cutting-edge solutions, including API integration,
-                      third-party libraries, and performance optimization.
+                      I’m a Full-Stack Developer who enjoys building practical, user-friendly web applications that solve real problems. 
+                      I work on both the front end and back end, turning ideas into clean, functional, and reliable systems. 
+                      I care about writing organized code, creating smooth user experiences, and making sure everything works securely and efficiently behind the scenes. 
+                      I’m always learning, improving my skills, and looking for better ways to build things.
+                      I’m excited to join a team where I can contribute, grow, and help create meaningful digital products.
                     </p>
 
                     <br className="main__break" />
 
                     <p className="main__text">
-                      If you're seeking a skilled Flutter developer to breathe
+                      If you're seeking a skilled Full-stack Developer to breathe
                       life into your project and exceed your expectations, I am
                       here to collaborate and create magic together.
                     </p>
@@ -133,42 +135,41 @@ export default function Portfolio() {
 
                     <div className="main__grid">
                       <article className="main__card">
-                        <div className="main__badge">📱</div>
+                        <div className="main__badge">🖥️</div>
                         <div className="main__cardBody">
-                          <h3 className="main__cardTitle">Mobile Apps</h3>
+                          <h3 className="main__cardTitle">Front-End</h3>
                           <p className="main__cardText">
-                            Professional development of applications for Android
-                            and iOS.
+                            I create responsive and user-friendly interfaces, including layouts, forms, dashboards, and interactive components using HTML, CSS, JavaScript, and modern frameworks.
                           </p>
                         </div>
                       </article>
 
                       <article className="main__card">
-                        <div className="main__badge">⌘</div>
+                        <div className="main__badge">🧠</div>
                         <div className="main__cardBody">
-                          <h3 className="main__cardTitle">Web Development</h3>
+                          <h3 className="main__cardTitle">Back-End</h3>
                           <p className="main__cardText">
-                            High-quality development of sites at the professional level.
+                            I develop secure and scalable server-side systems, handling authentication, business logic, APIs, and overall application functionality using technologies like PHP and Node.js.
                           </p>
                         </div>
                       </article>
 
                       <article className="main__card">
-                        <div className="main__badge">✎</div>
+                        <div className="main__badge">🗃️</div>
                         <div className="main__cardBody">
-                          <h3 className="main__cardTitle">UI/UX Design</h3>
+                          <h3 className="main__cardTitle">Database</h3>
                           <p className="main__cardText">
-                            The most modern and high-quality design made at a professional level.
+                            I design and manage structured databases to ensure efficient, secure, and reliable data storage and retrieval using systems such as MySQL, PostgreSQL, or MongoDB.
                           </p>
                         </div>
                       </article>
 
                       <article className="main__card">
-                        <div className="main__badge">🗄</div>
+                        <div className="main__badge">🚀</div>
                         <div className="main__cardBody">
-                          <h3 className="main__cardTitle">Backend Development</h3>
+                          <h3 className="main__cardTitle">Deployment</h3>
                           <p className="main__cardText">
-                            High-performance backend services designed for scalability and seamless UX.
+                            I configure servers, integrate APIs, optimize performance, and deploy applications using modern tools such as Docker and cloud platforms to ensure smooth and reliable operation.
                           </p>
                         </div>
                       </article>
@@ -178,20 +179,12 @@ export default function Portfolio() {
                 </div>
               )}
 
-              {activeTab === "resume" && (
-                <div className="tab-content active" id="resume">
-                  <div className="main__header">
-                    <h1 className="main__title">Resume</h1>
-                    <div className="main__underline"></div>
-                  </div>
-                  <p className="main__text">Resume Section</p>
-                </div>
-              )}
+              {activeTab === "resume" &&  <ResumePage/>}
 
               {activeTab === "portfolio" && (
                 <div className="tab-content active" id="portfolio">
                   <div className="main__header">
-                    <h1 className="main__title">Portfolio</h1>
+                    <h1 cla         ssName="main__title">Portfolio</h1>
                     <div className="main__underline"></div>
                   </div>
                   <p className="main__text">Portfolio Section</p>
