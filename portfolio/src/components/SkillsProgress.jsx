@@ -8,7 +8,6 @@ import javascriptIcon from "../assets/img/icon-javascript.png";
 import phpIcon from "../assets/img/icon-php.png";
 import mysqlIcon  from "../assets/img/icon-mysql.png";
 import restIcon from "../assets/img/icon-rest.png";
-import securedIcon from "../assets/img/icon-secured.png";
 
 
 export function SkillsProgress() {
@@ -17,63 +16,72 @@ export function SkillsProgress() {
   const fillRef = useRef(null);
 
   useEffect(() => {
-    const row = rowRef.current;
-    const line = lineRef.current;
-    const fill = fillRef.current;
+  const row = rowRef.current;
+  const line = lineRef.current;
+  const fill = fillRef.current;
 
-    if (!row || !line || !fill) return;
+  if (!row || !line || !fill) return;
 
-    const update = () => {
-      const maxScroll = row.scrollWidth - row.clientWidth;
+  const update = () => {
+    const maxScroll = row.scrollWidth - row.clientWidth;
 
-      // no overflow: fill entire line
-      if (maxScroll <= 0) {
-        fill.style.width = "100%";
-        fill.style.transform = "translateX(0px)";
-        return;
-      }
+    if (maxScroll <= 0) {
+      fill.style.width = "100%";
+      fill.style.transform = "translateX(0px)";
+      return;
+    }
 
-      // Fill width = visible area ratio (like a scrollbar thumb)
-      const visibleRatio = row.clientWidth / row.scrollWidth;
-      const lineWidth = line.clientWidth;
+    const visibleRatio = row.clientWidth / row.scrollWidth;
+    const lineWidth = line.clientWidth;
 
-      const fillWidthPx = Math.max(12, lineWidth * visibleRatio); // min width
-      fill.style.width = `${fillWidthPx}px`;
+    const fillWidthPx = Math.max(12, lineWidth * visibleRatio);
+    fill.style.width = `${fillWidthPx}px`;
 
-      // How far the fill can travel inside the line
-      const maxTravelPx = lineWidth - fillWidthPx;
+    const maxTravelPx = lineWidth - fillWidthPx;
 
-      // Scroll ratio (0 → 1)
-      let ratio = row.scrollLeft / maxScroll;
+    let ratio = row.scrollLeft / maxScroll;
 
-      // Force true end (fix fractional/rounding issues)
-      if (row.scrollLeft >= maxScroll - 2) ratio = 1;
-      if (row.scrollLeft <= 2) ratio = 0;
+    if (row.scrollLeft >= maxScroll - 2) ratio = 1;
+    if (row.scrollLeft <= 2) ratio = 0;
 
-      // Pixel-perfect translate
-      const x = Math.round(ratio * maxTravelPx);
-      fill.style.transform = `translateX(${x}px)`;
-    };
+    const x = Math.round(ratio * maxTravelPx);
+    fill.style.transform = `translateX(${x}px)`;
+  };
 
-    // Run once after mount
-    update();
+const handleWheel = (e) => {
+  // Only do anything if there's horizontal overflow
+  if (row.scrollWidth <= row.clientWidth) return;
 
-    // Events
-    row.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
+  const { deltaX, deltaY } = e;
 
-    // Optional: if content changes size after load (fonts/images), observe resize
-    const ro = new ResizeObserver(update);
-    ro.observe(row);
-    ro.observe(line);
+  // If user is doing a horizontal gesture (trackpad swipe),
+  // let the browser handle it naturally.
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    return;
+  }
 
-    return () => {
-      row.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
-      ro.disconnect();
-    };
-  }, []);
+  // Otherwise, convert vertical wheel to horizontal scroll (mouse wheel use-case)
+  e.preventDefault();
+  row.scrollLeft += deltaY;
+};
 
+  update();
+
+  row.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  row.addEventListener("wheel", handleWheel, { passive: false });
+
+  const ro = new ResizeObserver(update);
+  ro.observe(row);
+  ro.observe(line);
+
+  return () => {
+    row.removeEventListener("scroll", update);
+    window.removeEventListener("resize", update);
+    row.removeEventListener("wheel", handleWheel);
+    ro.disconnect();
+  };
+}, []);
   return (
     <div className="main__skills">
       <h3 className="main__sectionTitle">Skills</h3>
@@ -94,9 +102,6 @@ export function SkillsProgress() {
         </article>
         <article className="main__skill main__skill--s1">
           <img src={restIcon} alt="RESTAPI" />
-        </article>
-        <article className="main__skills main__skill--s2">
-          <img src={securedIcon} alt="Secured" />
         </article>
         <article className="main__skill main__skill--s3">
             <img src={mysqlIcon} alt="Mysql" />
