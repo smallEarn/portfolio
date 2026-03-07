@@ -4,13 +4,14 @@ import "../styles/portfolio.scss";
 
 import ProfileImage from "../assets/img/profile.png";
 import ResumePage from "./ResumePage";
+import ProjectsPage from "./ProjectsPage";
+import ContactPage from "./ContactPage";
 export default function Portfolio() {
   const tabs = useMemo(
     () => [
       { key: "about", label: "About" },
       { key: "resume", label: "Resume" },
-      { key: "portfolio", label: "Portfolio" },
-      { key: "blog", label: "Blog" },
+      { key: "projects", label: "Porjects" },
       { key: "contact", label: "Contact" },
     ],
     []
@@ -181,35 +182,9 @@ export default function Portfolio() {
 
               {activeTab === "resume" &&  <ResumePage/>}
 
-              {activeTab === "portfolio" && (
-                <div className="tab-content active" id="portfolio">
-                  <div className="main__header">
-                    <h1 cla         ssName="main__title">Portfolio</h1>
-                    <div className="main__underline"></div>
-                  </div>
-                  <p className="main__text">Portfolio Section</p>
-                </div>
-              )}
+              {activeTab === "projects" && <ProjectsPage/>}
 
-              {activeTab === "blog" && (
-                <div className="tab-content active" id="blog">
-                  <div className="main__header">
-                    <h1 className="main__title">Blog</h1>
-                    <div className="main__underline"></div>
-                  </div>
-                  <p className="main__text">Blog Section</p>
-                </div>
-              )}
-
-              {activeTab === "contact" && (
-                <div className="tab-content active" id="contact">
-                  <div className="main__header">
-                    <h1 className="main__title">Contact</h1>
-                    <div className="main__underline"></div>
-                  </div>
-                  <p className="main__text">Contact Section</p>
-                </div>
-              )}
+              {activeTab === "contact" && <ContactPage/>}
             </div>
           </div>
         </section>

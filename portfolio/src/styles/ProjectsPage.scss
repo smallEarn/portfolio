@@ -1,0 +1,43 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Each column will hold 4 items naturally if you have 8 total */
+
+.project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* THIS DIV WILL BE FULL IMAGE */
+.project-header {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+}
+
+/* link section */
+.project-content {
+  background: #f3e6e3;
+  padding: 16px 20px;
+}
+
+.project-content a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #b46a6a;
+}

@@ -11,9 +11,7 @@ export default function ResumePage() {
 
       {/* SUMMARY */}
       <p className="summary">
-        Flutter developer with experience in cross-platform apps, REST APIs, UI/UX,
-        and performance optimization. I enjoy building polished products with clean,
-        scalable architecture.
+        Full-Stack Developer with hands-on experience building responsive web applications from front end to back end. Passionate about writing clean, efficient code and creating practical solutions that improve user experience and business performance. Seeking an opportunity to contribute my skills and continue growing as a developer.
       </p>
 
       <div className="resumeGrid">
@@ -26,78 +24,47 @@ export default function ResumePage() {
               <div className="dot" />
               <div className="content">
                 <div className="top">
-                  <div className="role">Software Engineer (Flutter)</div>
-                  <div className="datePill">2023 — Present</div>
+                  <div className="role">Software Engineer / Full-Stack Engineer</div>
+                  <div className="datePill">2022 — Present</div>
                 </div>
-                <div className="place">Company Name • Remote</div>
+                <div className="place">Thy Web Development Inc., • Remote</div>
+                <h2>Wordpress Development</h2>
                 <ul className="bullets">
-                  <li>Built mobile features using clean architecture + state management.</li>
-                  <li>Integrated REST APIs, auth flows, and caching strategies.</li>
-                  <li>Improved performance and reduced UI jank on key screens.</li>
+                  <li>Developed custom WordPress themes from scratch based on Figma and Adobe XD designs.</li>
+                  <li>Converted UI/UX designs into responsive, pixel-perfect websites.</li>
+                  <li>Built dynamic templates, custom post types, and optimized site performance.</li>
+                  <li>Ensured cross-browser compatibility and mobile responsiveness.</li>
                 </ul>
-              </div>
-            </div>
-
-            <div className="timelineItem">
-              <div className="dot" />
-              <div className="content">
-                <div className="top">
-                  <div className="role">Mobile Developer</div>
-                  <div className="datePill">2021 — 2023</div>
-                </div>
-                <div className="place">Company Name • On-site</div>
+                  <h2>React & Laravel System Development</h2>
                 <ul className="bullets">
-                  <li>Delivered Android/iOS builds and supported releases.</li>
-                  <li>Implemented reusable UI components and form validation.</li>
+                  <li>Built full-stack web applications using React (frontend) and Laravel (backend).</li>
+                  <li>Implemented secure user authentication (registration, login, session handling).</li>
+                  <li>Designed RESTful APIs and managed database architecture.</li>
+                  <li>Improved system performance and scalability.</li>
                 </ul>
+             
               </div>
             </div>
           </div>
 
+          
+        </section>
+
+        {/* RIGHT COLUMN */}
+        <section className="resumeCol">
           <h2 className="sectionTitle">Education</h2>
           <div className="timelineCard">
             <div className="timelineItem">
               <div className="dot" />
               <div className="content">
                 <div className="top">
-                  <div className="role">BS in Computer Science</div>
-                  <div className="datePill">2017 — 2021</div>
+                  <div className="role">BS in Information Technology</div>
+                  <div className="datePill">2018 — 2019</div>
                 </div>
-                <div className="place">University Name</div>
+                <div className="place">University of Negros Occidental - Recoletos</div>
                 <p className="desc">Relevant: Software Engineering, Databases, UI Design.</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* RIGHT COLUMN */}
-        <section className="resumeCol">
-          <h2 className="sectionTitle">Skills</h2>
-
-          <div className="skillCard">
-            <div className="skillRow">
-              <span>Flutter / Dart</span>
-              <div className="bar"><i style={{ width: "90%" }} /></div>
-            </div>
-            <div className="skillRow">
-              <span>REST APIs</span>
-              <div className="bar"><i style={{ width: "85%" }} /></div>
-            </div>
-            <div className="skillRow">
-              <span>UI/UX</span>
-              <div className="bar"><i style={{ width: "80%" }} /></div>
-            </div>
-            <div className="skillRow">
-              <span>Backend</span>
-              <div className="bar"><i style={{ width: "70%" }} /></div>
-            </div>
-          </div>
-
-          <h2 className="sectionTitle">Tools</h2>
-          <div className="pillWrap">
-            {["Firebase", "Docker", "Laravel", "JavaScript", "Git", "Figma"].map((t) => (
-              <span key={t} className="chip">{t}</span>
-            ))}
           </div>
 
           <h2 className="sectionTitle">Certifications</h2>
@@ -114,11 +81,13 @@ export default function ResumePage() {
               </div>
             </div>
           </div>
+
+          <div className="timelineCard">
+            <a href="" className="cta-btn">Download Full CV</a>
+          </div>
         </section>
       </div>
 
-      {/* bottom accent like your screenshot */}
-      <div className="bottomAccent" />
     </div>
   );
 }
