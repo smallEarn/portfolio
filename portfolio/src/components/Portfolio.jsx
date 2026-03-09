@@ -10,8 +10,9 @@ export default function Portfolio() {
   const tabs = useMemo(
     () => [
       { key: "about", label: "About" },
+      { key: "skills", label: "Skills" },
       { key: "resume", label: "Resume" },
-      { key: "projects", label: "Porjects" },
+      { key: "projects", label: "Projects" },
       { key: "contact", label: "Contact" },
     ],
     []
@@ -121,9 +122,6 @@ export default function Portfolio() {
                       I’m always learning, improving my skills, and looking for better ways to build things.
                       I’m excited to join a team where I can contribute, grow, and help create meaningful digital products.
                     </p>
-
-                    <br className="main__break" />
-
                     <p className="main__text">
                       If you're seeking a skilled Full-stack Developer to breathe
                       life into your project and exceed your expectations, I am
@@ -176,9 +174,9 @@ export default function Portfolio() {
                       </article>
                     </div>
                   </div>
-                  <SkillsProgress />
                 </div>
               )}
+              {activeTab === "skills" &&  <SkillsProgress/>}
 
               {activeTab === "resume" &&  <ResumePage/>}
 
