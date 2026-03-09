@@ -45,6 +45,9 @@
     font-size: 1.8rem;
     margin: 0 0 1.2rem;
     letter-spacing: 0.02rem;
+    color: var(--colorTitle);
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
   }
 
   .timelineCard,
@@ -70,14 +73,23 @@
   }
 
   .dot {
-    width: 1rem;
-    height: 1rem;
+    width: 0.2rem;
+    height: 0.2rem;
     border-radius: 50%;
-    margin-top: 0.6rem;
+    margin-top: 1.4rem;
     background: #F7EFEC;
     box-shadow: 0 0 0 0.4rem #F7EFEC;
   }
 
+  .exTitle{
+    font-size: 1.6rem;
+    // margin: 0 0 1.2rem;
+    letter-spacing: 0.02rem;
+    color: var(--colorText);
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
+    text-align: left;
+  }
   .content .top {
     display: flex;
     justify-content: space-between;
@@ -104,10 +116,10 @@
 
   .place {
     margin-top: 0.6rem;
-    color: #2B2322;
+    color: var(--colorText);
     font-weight: var(--fontBold);
     font-family: var(--mainfont);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: left;
   }
 
@@ -121,7 +133,7 @@
   .bullets {
     margin: 1rem 0 0;
     padding-left: 1.8rem;
-    color: #2B2322;
+    color: var(--colorText);
     line-height: 1.6;
     font-weight: var(--fontBold);
     font-family: var(--mainfont);

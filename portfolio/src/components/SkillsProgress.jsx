@@ -10,7 +10,7 @@ import cssIcon from "../assets/img/icon-css3.png";
 import reactIcon from "../assets/img/icon-react.png";
 import nginxIcon from "../assets/img/icon-nginx.png";
 import linuxIcon from "../assets/img/icon-linux.png";
-// import linuxIcon from "../assets/img/icon-linux.png";
+import wordpressIcon from "../assets/img/icon-wordpress.png";
 
 import "../styles/skills.scss";
 
@@ -67,7 +67,7 @@ export function SkillsProgress() {
           <h2 className="main__skillCategory">CMS</h2>
 
           <div className="main__skillIcons">
-            <img src={phpIcon} alt="WordPress" />
+            <img src={wordpressIcon} alt="WordPress" />
           </div>
         </article>
 

@@ -28,12 +28,12 @@ export default function ResumePage() {
                   <div className="datePill">2022 — Present</div>
                 </div>
                 <div className="place">Thy Web Development Inc., • Remote</div>
-                <h2>Wordpress Development</h2>
+                <h2 className="exTitle">Wordpress Development</h2>
                 <ul className="bullets">
                   <li>Developed custom WordPress themes from scratch based on Figma and Adobe XD designs.</li>
                   <li>Converted UI/UX designs into responsive, pixel-perfect websites.</li>
                 </ul>
-                  <h2>React & Laravel System Development</h2>
+                  <h2 className="exTitle">React & Laravel System Development</h2>
                 <ul className="bullets">
                   <li>Built full-stack web applications using React (frontend) and Laravel (backend).</li>
                 </ul>
@@ -61,21 +61,6 @@ export default function ResumePage() {
               </div>
             </div>
           </div>
-
-          {/* <h2 className="sectionTitle">Certifications</h2>
-          <div className="timelineCard">
-            <div className="timelineItem">
-              <div className="dot" />
-              <div className="content">
-                <div className="top">
-                  <div className="role">Certification Title</div>
-                  <div className="datePill">2024</div>
-                </div>
-                <div className="place">Issuer</div>
-                <p className="desc">Short description of what it covers.</p>
-              </div>
-            </div>
-          </div> */}
 
           <div className="timelineCard">
             <a href="" className="cta-btn">Download Full CV</a>
