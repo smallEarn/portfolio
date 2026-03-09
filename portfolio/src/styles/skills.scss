@@ -1,0 +1,68 @@
+.main__skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.main__skillCard {
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  border-radius: 12px;
+  background: #C48A8A;
+}
+
+.main__skillCategory {
+//   margin-bottom: 15px;
+  color: var(--colorText);
+  font-size: 2.2rem;
+  margin: 0;
+  text-align: left;
+  font-weight: var(--fontBold);
+  font-family: var(--mainfont);
+
+}
+
+.main__skillIcons {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: #f3e6e3;
+    border: 0.01rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.4rem;
+    padding: 1rem 0 1rem;
+    margin-top: 1rem;
+}
+
+.main__skillIcons img {
+  width: 50px;
+}
+.main__skillsIntro {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+  text-align: left;
+}
+  .titleRow {
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .pageTitle {
+    font-size: 3.4rem;
+    margin: 0;
+    letter-spacing: 0.02rem;
+    text-align: left;
+    color: var(--colorTitle);
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
+  }
+
+  .titleUnderline {
+    width: 3rem;
+    height: 0.4rem;
+    border-radius: 99.9rem;
+    background: #f2b200;
+  }
