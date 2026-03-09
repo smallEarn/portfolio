@@ -32,15 +32,10 @@ export default function ResumePage() {
                 <ul className="bullets">
                   <li>Developed custom WordPress themes from scratch based on Figma and Adobe XD designs.</li>
                   <li>Converted UI/UX designs into responsive, pixel-perfect websites.</li>
-                  <li>Built dynamic templates, custom post types, and optimized site performance.</li>
-                  <li>Ensured cross-browser compatibility and mobile responsiveness.</li>
                 </ul>
                   <h2>React & Laravel System Development</h2>
                 <ul className="bullets">
                   <li>Built full-stack web applications using React (frontend) and Laravel (backend).</li>
-                  <li>Implemented secure user authentication (registration, login, session handling).</li>
-                  <li>Designed RESTful APIs and managed database architecture.</li>
-                  <li>Improved system performance and scalability.</li>
                 </ul>
              
               </div>
@@ -67,7 +62,7 @@ export default function ResumePage() {
             </div>
           </div>
 
-          <h2 className="sectionTitle">Certifications</h2>
+          {/* <h2 className="sectionTitle">Certifications</h2>
           <div className="timelineCard">
             <div className="timelineItem">
               <div className="dot" />
@@ -80,7 +75,7 @@ export default function ResumePage() {
                 <p className="desc">Short description of what it covers.</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="timelineCard">
             <a href="" className="cta-btn">Download Full CV</a>
