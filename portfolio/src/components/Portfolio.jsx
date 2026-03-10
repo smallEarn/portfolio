@@ -1,18 +1,19 @@
 import React, { useMemo, useState } from "react";
-import { SkillsProgress } from "../components/SkillsProgress";
+// import { SkillsProgress } from "../components/SkillsProgress";
 import "../styles/portfolio.scss";
 
 import ProfileImage from "../assets/img/profile.png";
 import ResumePage from "./ResumePage";
 import ProjectsPage from "./ProjectsPage";
 import ContactPage from "./ContactPage";
+import SkillsProgress from "./SkillsProgress";
 export default function Portfolio() {
   const tabs = useMemo(
     () => [
       { key: "about", label: "About" },
       { key: "skills", label: "Skills" },
-      { key: "resume", label: "Resume" },
       { key: "projects", label: "Projects" },
+      { key: "resume", label: "Resume" },
       { key: "contact", label: "Contact" },
     ],
     []
@@ -178,9 +179,9 @@ export default function Portfolio() {
               )}
               {activeTab === "skills" &&  <SkillsProgress/>}
 
-              {activeTab === "resume" &&  <ResumePage/>}
-
               {activeTab === "projects" && <ProjectsPage/>}
+
+              {activeTab === "resume" &&  <ResumePage/>}
 
               {activeTab === "contact" && <ContactPage/>}
             </div>

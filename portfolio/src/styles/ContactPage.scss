@@ -1,9 +1,19 @@
+// ==========================================================================
+//
+//   layout
+//
+// ==========================================================================
+@use '../styles/vars'  as var;
+@use '../styles/mixin'  as mixin;
 .contact-intro {
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
-  color: #555;
-  max-width: 60rem;
-  font-size: 1.4rem;
+  margin: 0;
+        color: var(--colorTitle);
+        font-family: var(--mainfont);
+        font-weight: var(--fontBold);
+        line-height: 1.7;
+        font-size: 1.4rem;
+        max-width: 80rem;
+        text-align: left;
 }
 
 .contact-container {
@@ -29,6 +39,8 @@
   border: 0.1rem solid #ddd;
   font-size: 1.4rem;
   outline: none;
+  background: #f3e6e3;
+  margin-top: 2rem;
 }
 
 .contact-form input:focus,

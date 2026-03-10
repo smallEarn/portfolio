@@ -1,3 +1,11 @@
+// ==========================================================================
+//
+//   layout
+//
+// ==========================================================================
+@use '../styles/vars'  as var;
+@use '../styles/mixin'  as mixin; 
+
 .resumePage {
   color: var(--ink);
 
@@ -26,13 +34,13 @@
 
   .summary {
     margin: 0;
-    color: var(--colorTitle);
-    max-width: 70rem;
-    line-height: 1.7;
-    font-weight: var(--fontBold);
-    text-align: left;
-    font-family: var(--mainfont);
-    font-size: 1.4rem;
+        color: var(--colorTitle);
+        font-family: var(--mainfont);
+        font-weight: var(--fontBold);
+        line-height: 1.7;
+        font-size: 1.4rem;
+        max-width: 80rem;
+        text-align: left;
   }
 
   .resumeGrid {
@@ -106,7 +114,7 @@
 
   .datePill {
     background: #F7EFEC;
-    padding: 0.6rem 1rem;
+    padding: 0rem 0.6rem;
     border-radius: 99.9rem;
     font-weight: 800;
     font-size: 1.6rem;
@@ -125,7 +133,11 @@
 
   .desc {
     margin: 0.8rem 0 0;
-    color: #2B2322;
+    color: var(--colorText);
+    line-height: 1.6;
+    font-weight: var(--fontBold);
+    font-family: var(--mainfont);
+    font-size: 1.4rem;
     line-height: 1.55;
     font-weight: 600;
   }
@@ -145,6 +157,34 @@
     }
   }
 
+  
+  .timelineCard-btn{
+    background: #C48A8A;
+    border-radius: 1.6rem;
+    padding: 1.8rem;
+
+
+  }
+      .timelineCard-btn:hover{
+        background: #9a5555;
+      }
+
+
+  // .timelineCard {
+  //   margin-bottom: 1.8rem;
+  // }
+
+  .cta-btn{
+  color: var(--colorText);
+    line-height: 1.6;
+    font-weight: var(--fontBold);
+    font-family: var(--mainfont);
+    font-size: 1.4rem;
+  }
+  
+//     .cta-btn:hover{
+//         background: #9a5555;
+// }
   .skillCard {
     display: grid;
     gap: 1.2rem;

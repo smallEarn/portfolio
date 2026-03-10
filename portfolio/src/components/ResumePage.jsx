@@ -62,7 +62,7 @@ export default function ResumePage() {
             </div>
           </div>
 
-          <div className="timelineCard">
+          <div className="timelineCard-btn">
             <a href="" className="cta-btn">Download Full CV</a>
           </div>
         </section>
