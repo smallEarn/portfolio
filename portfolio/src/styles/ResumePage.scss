@@ -1,10 +1,5 @@
-// ==========================================================================
-//
-//   layout
-//
-// ==========================================================================
-@use '../styles/vars'  as var;
-@use '../styles/mixin'  as mixin; 
+@use "../styles/vars" as var;
+@use "../styles/mixin" as mixin;
 
 .resumePage {
   color: var(--ink);
@@ -33,20 +28,21 @@
   }
 
   .summary {
-    margin: 0;
-        color: var(--colorTitle);
-        font-family: var(--mainfont);
-        font-weight: var(--fontBold);
-        line-height: 1.7;
-        font-size: 1.4rem;
-        max-width: 80rem;
-        text-align: left;
+    margin: 0 0 2rem;
+    color: var(--colorTitle);
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
+    line-height: 1.7;
+    font-size: 1.4rem;
+    max-width: 72rem;
+    text-align: left;
   }
 
   .resumeGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: 2.2rem;
+    align-items: start;
   }
 
   .sectionTitle {
@@ -56,28 +52,23 @@
     color: var(--colorTitle);
     font-family: var(--mainfont);
     font-weight: var(--fontBold);
+    text-align: left;
   }
 
   .timelineCard,
-  .skillCard {
-    background: #C48A8A;
+  .miniCard {
+    background: #c48a8a;
     border-radius: 1.6rem;
-    padding: 1.8rem;
   }
 
   .timelineCard {
-    margin-bottom: 1.8rem;
+    padding: 1.8rem;
   }
 
   .timelineItem {
     display: grid;
     grid-template-columns: 1.2rem 1fr;
     gap: 1.4rem;
-    padding: 1rem 0;
-
-    &:not(:last-child) {
-      border-bottom: 0.1rem solid #2B2322;
-    }
   }
 
   .dot {
@@ -85,24 +76,16 @@
     height: 0.2rem;
     border-radius: 50%;
     margin-top: 1.4rem;
-    background: #F7EFEC;
-    box-shadow: 0 0 0 0.4rem #F7EFEC;
+    background: #f7efec;
+    box-shadow: 0 0 0 0.4rem #f7efec;
   }
 
-  .exTitle{
-    font-size: 1.6rem;
-    // margin: 0 0 1.2rem;
-    letter-spacing: 0.02rem;
-    color: var(--colorText);
-    font-family: var(--mainfont);
-    font-weight: var(--fontBold);
-    text-align: left;
-  }
   .content .top {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
   }
 
   .role {
@@ -110,133 +93,139 @@
     font-family: var(--mainfont);
     font-size: 1.8rem;
     text-align: left;
+    color: var(--colorText);
+    line-height: 1.4;
   }
 
   .datePill {
-    background: #F7EFEC;
-    padding: 0rem 0.6rem;
+    background: #f7efec;
+    padding: 0.2rem 0.9rem;
     border-radius: 99.9rem;
     font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     white-space: nowrap;
-    color: #C48A8A;
+    color: #c48a8a;
   }
 
   .place {
-    margin-top: 0.6rem;
+    margin-bottom: 1.6rem;
     color: var(--colorText);
     font-weight: var(--fontBold);
     font-family: var(--mainfont);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: left;
   }
 
-  .desc {
-    margin: 0.8rem 0 0;
-    color: var(--colorText);
-    line-height: 1.6;
-    font-weight: var(--fontBold);
-    font-family: var(--mainfont);
-    font-size: 1.4rem;
-    line-height: 1.55;
-    font-weight: 600;
+  .highlightList {
+    display: grid;
+    gap: 1.2rem;
   }
 
-  .bullets {
-    margin: 1rem 0 0;
-    padding-left: 1.8rem;
-    color: var(--colorText);
-    line-height: 1.6;
-    font-weight: var(--fontBold);
-    font-family: var(--mainfont);
-    font-size: 1.4rem;
+  .highlightItem {
+    background: rgba(247, 239, 236, 0.18);
+    border-radius: 1.2rem;
+    padding: 1.2rem 1.4rem;
     text-align: left;
 
-    li + li {
-      margin-top: 0.6rem;
+    p {
+      margin: 0.6rem 0 0;
+      color: var(--colorText);
+      font-family: var(--mainfont);
+      font-size: 1.35rem;
+      font-weight: var(--fontBold);
+      line-height: 1.6;
     }
   }
 
-  
-  .timelineCard-btn{
-    background: #C48A8A;
-    border-radius: 1.6rem;
-    padding: 1.8rem;
-
-
-  }
-      .timelineCard-btn:hover{
-        background: #9a5555;
-      }
-
-
-  // .timelineCard {
-  //   margin-bottom: 1.8rem;
-  // }
-
-  .cta-btn{
-  color: var(--colorText);
-    line-height: 1.6;
-    font-weight: var(--fontBold);
-    font-family: var(--mainfont);
-    font-size: 1.4rem;
-  }
-  
-//     .cta-btn:hover{
-//         background: #9a5555;
-// }
-  .skillCard {
-    display: grid;
-    gap: 1.2rem;
-    margin-bottom: 1.8rem;
-  }
-
-  .skillRow {
-    display: grid;
-    grid-template-columns: 14rem 1fr;
-    gap: 1.2rem;
+  .highlightLabel {
+    display: inline-flex;
     align-items: center;
-
-    span {
-      font-weight: 800;
-    }
-  }
-
-  .bar {
-    height: 1rem;
+    padding: 0.35rem 0.9rem;
     border-radius: 99.9rem;
-    background: #F7EFEC;
-    overflow: hidden;
-
-    i {
-      display: block;
-      height: 100%;
-      border-radius: 99.9rem;
-      background: #f2b200;
-    }
+    background: #f7efec;
+    color: #c48a8a;
+    font-size: 1.2rem;
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
   }
 
-  .pillWrap {
-    display: flex;
-    flex-wrap: wrap;
+  .resumeCol:last-child {
+    display: grid;
     gap: 1rem;
-    margin-bottom: 1.8rem;
   }
 
-  .chip {
-    background: #C88F8A;
-    border-radius: 99.9rem;
-    padding: 0.8rem 1.2rem;
-    font-weight: 800;
-    font-size: 1.3rem;
+  .miniCard {
+    padding: 1.6rem;
+    text-align: left;
   }
 
-  .bottomAccent {
-    margin: 1.8rem auto 0;
-    width: 18rem;
-    height: 0.4rem;
+  .miniCard__title {
+    font-size: 1.4rem;
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
+    color: #f7efec;
+    margin-bottom: 0.8rem;
+    opacity: 0.95;
+  }
+
+  .miniCard p {
+    margin: 0;
+    color: var(--colorText);
+    font-family: var(--mainfont);
+    font-size: 1.4rem;
+    font-weight: var(--fontBold);
+    line-height: 1.6;
+  }
+
+  .miniCard__strong {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .miniCard__date {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #f7efec;
+    color: #c48a8a;
     border-radius: 99.9rem;
-    background: #f2b200;
-    opacity: 0.9;
+    padding: 0.3rem 0.8rem;
+    font-size: 1.2rem;
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
+  }
+
+  .ctaBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5.8rem;
+    border-radius: 1.6rem;
+    background: #c48a8a;
+    color: var(--colorText);
+    text-decoration: none;
+    font-family: var(--mainfont);
+    font-size: 1.4rem;
+    font-weight: var(--fontBold);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .ctaBtn:hover {
+    background: #9a5555;
+    transform: translateY(-0.2rem);
+  }
+
+  @media screen and (max-width: 900px) {
+    .resumeGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .content .top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .datePill {
+      align-self: flex-start;
+    }
   }
 }
