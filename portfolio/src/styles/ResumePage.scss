@@ -7,7 +7,7 @@
   .titleRow {
     display: grid;
     gap: 0.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   .pageTitle {
@@ -28,7 +28,7 @@
   }
 
   .summary {
-    margin: 0 0 2rem;
+    margin: 0 0;
     color: var(--colorTitle);
     font-family: var(--mainfont);
     font-weight: var(--fontBold);
@@ -47,7 +47,7 @@
 
   .sectionTitle {
     font-size: 1.8rem;
-    margin: 0 0 1.2rem;
+    margin: 0 0 0.2rem;
     letter-spacing: 0.02rem;
     color: var(--colorTitle);
     font-family: var(--mainfont);
@@ -68,7 +68,7 @@
   .timelineItem {
     display: grid;
     grid-template-columns: 1.2rem 1fr;
-    gap: 1.4rem;
+    gap: 0.2rem;
   }
 
   .dot {
@@ -151,7 +151,7 @@
 
   .resumeCol:last-child {
     display: grid;
-    gap: 1rem;
+    gap: 0.4rem;
   }
 
   .miniCard {

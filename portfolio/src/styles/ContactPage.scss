@@ -1,66 +1,135 @@
-// ==========================================================================
-//
-//   layout
-//
-// ==========================================================================
-@use '../styles/vars'  as var;
-@use '../styles/mixin'  as mixin;
-.contact-intro {
+@use "../styles/vars" as var;
+@use "../styles/mixin" as mixin;
+
+.contactPage {
+  width: 100%;
+}
+
+.main__header {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.main__title {
+  font-size: 3.4rem;
   margin: 0;
-        color: var(--colorTitle);
-        font-family: var(--mainfont);
-        font-weight: var(--fontBold);
-        line-height: 1.7;
-        font-size: 1.4rem;
-        max-width: 80rem;
-        text-align: left;
+  letter-spacing: 0.02rem;
+  text-align: left;
+  color: var(--colorTitle);
+  font-family: var(--mainfont);
+  font-weight: var(--fontBold);
 }
 
-.contact-container {
-  max-width: 70rem;
+.main__underline {
+  width: 3rem;
+  height: 0.4rem;
+  border-radius: 99.9rem;
+  background: #f2b200;
 }
 
-.contact-form {
+.contactIntro {
+  margin: 0 0 1.6rem;
+  color: var(--colorTitle);
+  font-family: var(--mainfont);
+  font-weight: var(--fontBold);
+  line-height: 1.7;
+  font-size: 1.4rem;
+  max-width: 82rem;
+  text-align: left;
+}
+
+.contactStatus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.4rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 1.2rem;
+  background: #c48a8a;
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: var(--mainfont);
+  font-weight: var(--fontBold);
+  margin-bottom: 0rem;
+}
+
+.contactFormCard {
+  max-width: 78rem;
+  margin: 0 auto;
+  background: #f3e6e3;
+  border-radius: 1.8rem;
+  padding: 2rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.05);
+}
+
+.contactForm {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.form-row {
-  display: flex;
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contactForm input,
+.contactForm textarea {
   width: 100%;
-  padding: 1.2rem 1.4rem;
-  border-radius: 1rem;
+  padding: 1.3rem 1.4rem;
+  border-radius: 1.2rem;
   border: 0.1rem solid #ddd;
   font-size: 1.4rem;
   outline: none;
-  background: #f3e6e3;
-  margin-top: 2rem;
+  background: #f9f1ef;
+  color: var(--colorTitle);
+  font-family: var(--mainfont);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: #7d7070;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
   border-color: #b46a6a;
+  box-shadow: 0 0 0 0.2rem rgba(180, 106, 106, 0.12);
 }
 
-.contact-form button {
+.contactForm textarea {
+  resize: vertical;
+  min-height: 18rem;
+}
+
+.contactForm button {
   width: fit-content;
+  min-width: 16rem;
   padding: 1.2rem 2rem;
   background: #b46a6a;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: var(--fontBold);
   font-size: 1.4rem;
-  transition: 0.2s;
+  font-family: var(--mainfont);
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.contact-form button:hover {
+.contactForm button:hover {
   background: #9a5555;
+  transform: translateY(-0.2rem);
+}
+
+@media screen and (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .contactFormCard {
+    padding: 1.6rem;
+  }
 }

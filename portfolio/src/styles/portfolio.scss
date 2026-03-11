@@ -246,7 +246,7 @@ section.shell {
         padding: 2.2rem 2.4rem 2.4rem;
         display: flex;
         flex-direction: column;
-        gap: 1.8rem;
+        gap: 1rem;
     }
 
     &__topbar {
@@ -323,7 +323,7 @@ section.shell {
         font-family: var(--mainfont);
         font-weight: var(--fontBold);
         color: var(--colorTitle);
-        margin-bottom: 0.8rem;
+        margin-bottom: 0rem;
         text-align: left;
     }
 

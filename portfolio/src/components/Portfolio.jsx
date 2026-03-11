@@ -36,7 +36,7 @@ export default function Portfolio() {
                 <img src={ProfileImage} alt="Profile" />
               </div>
               <h1>Precious Genodeala</h1>
-              <p className="role">Software Engineer</p>
+              <p className="role">Full-stack Developer</p>
             </div>
 
             <div className="divider" />
