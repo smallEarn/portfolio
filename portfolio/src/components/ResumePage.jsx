@@ -81,7 +81,7 @@ export default function ResumePage() {
             <span className="miniCard__date">2018 — 2019</span>
           </div>
 
-          <a href="" className="ctaBtn">
+          <a href="./CV-PRECIOUS.pdf" download="Precious_CV.pdf" className="ctaBtn">
             Download Full CV
           </a>
         </section>

@@ -68,17 +68,24 @@ export default function Portfolio() {
             </div>
 
             <div className="social">
-              <a href="#" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/precious-genodeala-591346153/" aria-label="LinkedIn">
                 in
               </a>
-              <a href="#" aria-label="GitHub">
+              <a href="https://github.com/thy-preciousgenodeala/" aria-label="GitHub">
                 ⌂
               </a>
-              <a href="#" aria-label="Google">
-                G
+              <a href="https://smallearn.github.io/portfolio/" aria-label="Porfolio">
+                P
               </a>
-              <a href="#" aria-label="Twitter">
-                𝕏
+              <a
+                href="#"
+                aria-label="Email"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setActiveTab("contact");
+                }}
+              >
+                ✉️
               </a>
             </div>
           </div>

@@ -1,6 +1,30 @@
 import "../styles/ContactPage.scss";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 export default function ContactPage() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_km0hwui",
+      "template_axlw2tp",
+      form.current,
+      "F--lerGx9iTRrpB4_"
+    ).then(
+      () => {
+        alert("Message sent successfully!");
+        form.current.reset(); // ⭐ clears all inputs
+      },
+      (error) => {
+        alert("Failed to send message.");
+        console.log(error);
+      }
+    );
+  };
+
   return (
     <section className="contactPage" id="contact">
       <div className="main__header">
@@ -10,7 +34,6 @@ export default function ContactPage() {
 
       <p className="contactIntro">
         I’m currently open to freelance projects, full-time opportunities, and collaborations.
-        If you have a project in mind or would like to discuss a role, feel free to send a message.
       </p>
 
       <div className="contactStatus">
@@ -18,15 +41,16 @@ export default function ContactPage() {
       </div>
 
       <div className="contactFormCard">
-        <form className="contactForm">
+        <form ref={form} className="contactForm" onSubmit={sendEmail}>
           <div className="formRow">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
           </div>
 
-          <input type="text" placeholder="Subject" required />
+          <input type="text" name="subject" placeholder="Subject" required />
 
           <textarea
+            name="message"
             placeholder="Tell me about your project or opportunity"
             rows="7"
             required

@@ -35,7 +35,7 @@ export default function SkillsProgress() {
     {
       category: "Backend",
       skills: [
-        { name: "PHP", icon: phpIcon, level: "Advanced", percent: 85 },
+        { name: "PHP", icon: phpIcon, level: "Intermediate", percent: 75 },
         { name: "Laravel", icon: laravelIcon, level: "Intermediate", percent: 78 },
         { name: "REST API", icon: restIcon, level: "Intermediate", percent: 80 },
         { name: "MySQL", icon: mysqlIcon, level: "Intermediate", percent: 76 },
