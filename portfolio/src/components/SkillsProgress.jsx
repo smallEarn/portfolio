@@ -17,9 +17,7 @@ import wordpressIcon from "../assets/img/icon-wordpress.png";
 import "../styles/skills.scss";
 
 export default function SkillsProgress() {
-  const rowRef = useRef(null);
-  const lineRef = useRef(null);
-  const fillRef = useRef(null);
+  const skillsRowRef = useRef(null);
   const [showScrollHint, setShowScrollHint] = useState(true);
 
   const skillGroups = [
@@ -57,36 +55,29 @@ export default function SkillsProgress() {
   ];
 
   useEffect(() => {
-    const row = rowRef.current;
-    const line = lineRef.current;
-    const fill = fillRef.current;
+    const row = skillsRowRef.current;
+    if (!row) return;
 
-    if (!row || !line || !fill) return;
+    const isSp = () => window.innerWidth <= 767;
 
-    const updateIndicator = () => {
-      const maxScroll = row.scrollWidth - row.clientWidth;
-      const lineWidth = line.clientWidth;
-
-      if (maxScroll <= 0) {
-        fill.style.width = `${lineWidth}px`;
-        fill.style.transform = "translateX(0px)";
+    const updateScrollHint = () => {
+      if (isSp()) {
         setShowScrollHint(false);
         return;
       }
 
-      const visibleRatio = row.clientWidth / row.scrollWidth;
-      const fillWidth = Math.max(40, lineWidth * visibleRatio);
-      const maxTravel = lineWidth - fillWidth;
-      const scrollRatio = row.scrollLeft / maxScroll;
-      const x = maxTravel * scrollRatio;
+      const maxScroll = row.scrollWidth - row.clientWidth;
 
-      fill.style.width = `${fillWidth}px`;
-      fill.style.transform = `translateX(${x}px)`;
+      if (maxScroll <= 0) {
+        setShowScrollHint(false);
+        return;
+      }
 
       setShowScrollHint(row.scrollLeft < maxScroll - 10);
     };
 
     const handleWheel = (e) => {
+      if (isSp()) return;
       if (row.scrollWidth <= row.clientWidth) return;
 
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
@@ -95,51 +86,55 @@ export default function SkillsProgress() {
       }
     };
 
-    updateIndicator();
+    updateScrollHint();
 
-    row.addEventListener("scroll", updateIndicator, { passive: true });
+    row.addEventListener("scroll", updateScrollHint, { passive: true });
     row.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("resize", updateIndicator);
+    window.addEventListener("resize", updateScrollHint);
 
     return () => {
-      row.removeEventListener("scroll", updateIndicator);
+      row.removeEventListener("scroll", updateScrollHint);
       row.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("resize", updateIndicator);
+      window.removeEventListener("resize", updateScrollHint);
     };
   }, []);
 
   return (
-    <div className="main__skills">
-      <div className="titleRow">
-        <h1 className="pageTitle">Skills</h1>
-        <div className="titleUnderline" />
+    <section className="skillsSection">
+      <div className="skillsHeader">
+        <h1 className="skillsTitle">Skills</h1>
+        <div className="skillsTitleUnderline" />
       </div>
 
-      <p className="main__skillsIntro">
+      <p className="skillsIntro">
         Technologies and tools I use to build responsive, scalable, and user-focused web applications.
       </p>
 
-      <div className="main__skillsViewport">
-        <div className="main__skillsRow" ref={rowRef}>
+      <div className="skillsViewport">
+        <div className="skillsRow" ref={skillsRowRef}>
           {skillGroups.map((group) => (
-            <article className="main__skillCard" key={group.category}>
-              <h2 className="main__skillCategory">{group.category}</h2>
+            <article className="skillCard" key={group.category}>
+              <h2 className="skillCard__category">{group.category}</h2>
 
-              <div className="main__skillList">
+              <div className="skillCard__list">
                 {group.skills.map((skill) => (
-                  <div className="main__skillItem" key={skill.name}>
-                    <div className="main__skillTop">
-                      <div className="main__skillInfo">
-                        <img src={skill.icon} alt={skill.name} className="main__skillIcon" />
-                        <span className="main__skillName">{skill.name}</span>
+                  <div className="skillCard__item" key={skill.name}>
+                    <div className="skillCard__head">
+                      <div className="skillCard__info">
+                        <img
+                          src={skill.icon}
+                          alt={skill.name}
+                          className="skillCard__icon"
+                        />
+                        <span className="skillCard__name">{skill.name}</span>
                       </div>
 
-                      <span className="main__skillLevel">{skill.level}</span>
+                      <span className="skillCard__level">{skill.level}</span>
                     </div>
 
-                    <div className="main__skillBar">
+                    <div className="skillCard__bar">
                       <div
-                        className="main__skillFill"
+                        className="skillCard__barFill"
                         style={{ width: `${skill.percent}%` }}
                       />
                     </div>
@@ -150,15 +145,13 @@ export default function SkillsProgress() {
           ))}
         </div>
 
-       
-      </div>
-
-       {showScrollHint && (
-          <div className="main__scrollHint">
-            <span className="main__scrollHintText">Scroll right</span>
-            <span className="main__scrollHintArrow">→</span>
+        {showScrollHint && (
+          <div className="skillsScrollHint">
+            <span className="skillsScrollHint__text">Scroll right</span>
+            <span className="skillsScrollHint__arrow">→</span>
           </div>
         )}
-    </div>
+      </div>
+    </section>
   );
 }

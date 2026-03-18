@@ -1,24 +1,19 @@
 @use "./mixin";
 
 
-:root {
-  --colorText: #FBF7F2;
-  --colorTitle: #3C2F2F;
-  --subText: #E6BFBF;
-  --mainfont: 'Zen Maru Gothic', sans-serif;
-  --fontBold: 700;
-  --fontMedium: 500;
-}
 
 * {
   box-sizing: border-box;
 }
-
+#root{
+  margin: 0 auto;
+}
 html {
 	font-size: min(62.5%, calc(1000vw/1912));
   @include mixin.mq(sp) {
     font-size: calc(1000vw/375);
   }
+  overflow-x: hidden;
 }
 
 body {

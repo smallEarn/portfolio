@@ -1,130 +1,200 @@
-@use "../styles/vars" as var;
+// ==========================================================================
+//
+//   projects
+//
+// ==========================================================================
+@use '../styles/vars' as var;
+@use '../styles/mixin' as mixin;
 
 .projectsSection {
-  width: 100%;
+    width: 100%;
 }
 
 /* header */
 
 .main__header {
-  display: grid;
-  gap: 0.8rem;
-  margin-bottom: 0rem;
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 0rem;
+
+    @include mixin.mq(sp) {
+        gap: 0.6rem;
+    }
 }
 
 .main__title {
-  font-size: 3.4rem;
-  margin: 0;
-  letter-spacing: 0.02rem;
-  color: var(--colorTitle);
-  font-family: var(--mainfont);
-  font-weight: var(--fontBold);
+    font-size: 3.4rem;
+    margin: 0;
+    letter-spacing: 0.02rem;
+    color: var(--colorTitle);
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
+
+    @include mixin.mq(sp) {
+        font-size: 2.6rem;
+    }
 }
 
 .main__underline {
-  width: 3rem;
-  height: 0.4rem;
-  border-radius: 999px;
-  background: #c48a8a;
+    width: 3rem;
+    height: 0.4rem;
+    border-radius: 99.9rem;
+    background: #c48a8a;
 }
 
 .projectsIntro {
-  color: var(--colorTitle);
-        font-family: var(--mainfont);
-        font-weight: var(--fontBold);
-        line-height: 1.7;
-        font-size: 1.4rem;
-        max-width: 80rem;
-        text-align: left;
+    color: var(--colorTitle);
+    font-family: var(--mainfont);
+    font-weight: var(--fontBold);
+    line-height: 1.7;
+    font-size: 1.4rem;
+    max-width: 80rem;
+    text-align: left;
+
+    @include mixin.mq(sp) {
+        font-size: 1.3rem;
+        line-height: 1.8;
+    }
 }
 
 .scrollHint {
-  font-size: 1.2rem;
-  opacity: 0.7;
-  margin-bottom: 1rem;
-  color: var(--colorTitle);
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    color: var(--colorTitle);
+
+    @include mixin.mq(sp) {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
 }
 
 /* scroll area */
 
 .projectsScrollArea {
-  height: 44rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-right: 6px;
+    height: 44rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0.6rem;
+
+    @include mixin.mq(sp) {
+        height: auto;
+        max-height: none;
+        padding-right: 0;
+        overflow: visible;
+    }
 }
 
 /* scrollbar */
 
 .projectsScrollArea::-webkit-scrollbar {
-  width: 6px;
+    width: 0.6rem;
 }
 
 .projectsScrollArea::-webkit-scrollbar-thumb {
-  background: #c48a8a;
-  border-radius: 999px;
+    background: #c48a8a;
+    border-radius: 99.9rem;
 }
 
 /* grid */
 
 .projectsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include mixin.mq(sp) {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
 }
 
 /* cards */
 
 .projectCard {
-  background: #f3e6e3;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-  transition: transform 0.25s ease;
+    background: #f3e6e3;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease;
+
+    @include mixin.mq(sp) {
+        border-radius: 1.2rem;
+    }
 }
 
 .projectCard:hover {
-  transform: translateY(-6px);
+    transform: translateY(-0.6rem);
 }
 
 .projectCard__imageWrapper img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+
+    @include mixin.mq(sp) {
+        height: 16rem;
+    }
 }
 
 .projectCard__body {
-  padding: 16px;
+    padding: 1.6rem;
+
+    @include mixin.mq(sp) {
+        padding: 1.2rem;
+    }
 }
 
 .projectCard__title {
-  margin: 0 0 8px;
-  font-size: 1.8rem;
-  color: var(--colorTitle);
+    margin: 0 0 0.8rem;
+    font-size: 1.8rem;
+    color: var(--colorTitle);
+
+    @include mixin.mq(sp) {
+        font-size: 1.6rem;
+    }
 }
 
 .projectCard__desc {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  color: var(--colorTitle);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--colorTitle);
+
+    @include mixin.mq(sp) {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .projectCard__stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+
+    @include mixin.mq(sp) {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .projectCard__stack span {
-  background: #e7d2cf;
-  padding: 4px 8px;
-  border-radius: 999px;
-  font-size: 11px;
+    background: #e7d2cf;
+    padding: 0.4rem 0.8rem;
+    border-radius: 99.9rem;
+    font-size: 1.1rem;
+
+    @include mixin.mq(sp) {
+        font-size: 1rem;
+    }
 }
 
 .projectCard__link {
-  font-weight: 600;
-  text-decoration: none;
-  color: #b46a6a;
+    font-weight: 600;
+    text-decoration: none;
+    color: #b46a6a;
+
+    @include mixin.mq(sp) {
+        font-size: 1.3rem;
+    }
 }

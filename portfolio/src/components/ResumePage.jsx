@@ -24,7 +24,7 @@ export default function ResumePage() {
               <div className="dot" />
               <div className="content">
                 <div className="top">
-                  <div className="role">Software Engineer / Full-Stack Engineer</div>
+                  <div className="role">Software Engineer</div>
                   <div className="datePill">2022 — Present</div>
                 </div>
 

@@ -214,7 +214,7 @@
     transform: translateY(-0.2rem);
   }
 
-  @media screen and (max-width: 900px) {
+  @include mixin.mq(sp) {
     .resumeGrid {
       grid-template-columns: 1fr;
     }

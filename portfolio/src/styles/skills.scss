@@ -1,240 +1,254 @@
 @use "../styles/vars" as var;
 @use "../styles/mixin" as mixin;
 
-.main__skills {
+.skillsSection {
   width: 100%;
+  min-width: 0;
 }
 
-.main__skillsIntro {
-  margin: 0 0 2rem;
-  color: var(--colorTitle);
-  font-family: var(--mainfont);
-  font-weight: var(--fontBold);
-  line-height: 1.7;
-  font-size: 1.4rem;
-  max-width: 80rem;
-  text-align: left;
-}
-
-.titleRow {
+.skillsHeader {
   display: grid;
   gap: 0.8rem;
   margin-bottom: 1rem;
+
+  @include mixin.mq(sp) {
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
 }
 
-.pageTitle {
-  font-size: 3.4rem;
+.skillsTitle {
   margin: 0;
-  letter-spacing: 0.02rem;
-  text-align: left;
   color: var(--colorTitle);
   font-family: var(--mainfont);
+  font-size: 3.4rem;
   font-weight: var(--fontBold);
+  letter-spacing: 0.02rem;
+  text-align: left;
+
+  @include mixin.mq(sp) {
+    font-size: 2.6rem;
+  }
 }
 
-.titleUnderline {
+.skillsTitleUnderline {
   width: 3rem;
   height: 0.4rem;
   border-radius: 99.9rem;
   background: #f2b200;
 }
 
-/* horizontal scroll area */
-.main__skillsViewport {
+.skillsIntro {
+  max-width: 80rem;
+  margin: 0 0 2rem;
+  color: var(--colorTitle);
+  font-family: var(--mainfont);
+  font-size: 1.4rem;
+  font-weight: var(--fontBold);
+  line-height: 1.7;
+  text-align: left;
+
+  @include mixin.mq(sp) {
+    margin: 0 0 1.6rem;
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+}
+
+.skillsViewport {
+  position: relative;
   width: 100%;
+  min-width: 0;
   overflow: hidden;
 }
 
-.main__skillsRow {
+.skillsRow {
   display: flex;
   gap: 2.4rem;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: smooth;
   padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mixin.mq(sp) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    overflow: visible;
+    padding-bottom: 0;
+  }
 }
 
-.main__skillsRow::-webkit-scrollbar {
-  display: none;
-}
-
-.main__skillCard {
+.skillCard {
   flex: 0 0 29rem;
   min-width: 29rem;
   max-width: 29rem;
-  border: 1px solid #e5e5e5;
   padding: 2.4rem;
+  border: 0.1rem solid #e5e5e5;
   border-radius: 1.6rem;
   background: #c48a8a;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.08);
 
-.main__skillCategory {
-  color: #fff;
-  font-size: 2rem;
-  margin: 0 0 1.6rem;
-  text-align: left;
-  font-weight: var(--fontBold);
-  font-family: var(--mainfont);
-}
-
-.main__skillList {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-  background: #f3e6e3;
-  border-radius: 1.4rem;
-  padding: 1.6rem;
-}
-
-.main__skillItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.main__skillTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.main__skillInfo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  min-width: 0;
-}
-
-.main__skillIcon {
-  width: 3.2rem;
-  height: 3.2rem;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.main__skillName {
-  font-size: 1.5rem;
-  font-family: var(--mainfont);
-  font-weight: var(--fontBold);
-  color: var(--colorTitle);
-}
-
-.main__skillLevel {
-  font-size: 1.1rem;
-  font-family: var(--mainfont);
-  font-weight: var(--fontBold);
-  color: #fff;
-  background: rgba(0, 0, 0, 0.12);
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.main__skillBar {
-  width: 100%;
-  height: 1rem;
-  background: #e6d2cf;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.main__skillFill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #f2b200 0%, #ffcf4d 100%);
-}
-
-/* custom scroll indicator */
-.main__progressLine {
-  width: min(52rem, 70%);
-  height: 0.5rem;
-  background: #e6d2cf;
-  border-radius: 999px;
-  margin: 1.8rem auto 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.main__progressFill {
-  height: 100%;
-  width: 8rem;
-  background: #f2b200;
-  border-radius: 999px;
-  transform: translateX(0);
-  transition: transform 0.08s linear, width 0.08s linear;
-}
-
-@media screen and (max-width: 768px) {
-  .main__skillCard {
-    flex: 0 0 26rem;
-    min-width: 26rem;
-    max-width: 26rem;
+  @include mixin.mq(sp) {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    padding: 1.6rem;
+    border-radius: 1.2rem;
   }
 
-  .main__skillTop {
+  &__category {
+    margin: 0 0 1.6rem;
+    color: #fff;
+    font-family: var(--mainfont);
+    font-size: 2rem;
+    font-weight: var(--fontBold);
+    text-align: left;
+
+    @include mixin.mq(sp) {
+      margin-bottom: 1.2rem;
+      font-size: 1.7rem;
+    }
+  }
+
+  &__list {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    gap: 1.4rem;
+    padding: 1.6rem;
+    border-radius: 1.4rem;
+    background: #f3e6e3;
+
+    @include mixin.mq(sp) {
+      gap: 1rem;
+      padding: 1.2rem;
+    }
   }
 
-  .main__skillLevel {
-    align-self: flex-start;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
-  .main__progressLine {
-    width: 80%;
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include mixin.mq(sp) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+
+    @include mixin.mq(sp) {
+      gap: 0.8rem;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    object-fit: contain;
+
+    @include mixin.mq(sp) {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+  }
+
+  &__name {
+    color: var(--colorTitle);
+    font-family: var(--mainfont);
+    font-size: 1.5rem;
+    font-weight: var(--fontBold);
+
+    @include mixin.mq(sp) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__level {
+    flex-shrink: 0;
+    padding: 0.45rem 0.9rem;
+    border-radius: 99.9rem;
+    background: rgba(0, 0, 0, 0.12);
+    color: #fff;
+    font-family: var(--mainfont);
+    font-size: 1.1rem;
+    font-weight: var(--fontBold);
+    white-space: nowrap;
+
+    @include mixin.mq(sp) {
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+    }
+  }
+
+  &__bar {
+    width: 100%;
+    height: 1rem;
+    overflow: hidden;
+    border-radius: 99.9rem;
+    background: #e6d2cf;
+  }
+
+  &__barFill {
+    height: 100%;
+    border-radius: 99.9rem;
+    background: linear-gradient(90deg, #f2b200 0%, #ffcf4d 100%);
   }
 }
 
-.main__skillsViewport {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.main__scrollHint {
+.skillsScrollHint {
   position: absolute;
-  top: 100%;
-  right: 2rem;
-  transform: translateY(-50%);
+  right: 1.2rem;
+  bottom: -1.2rem;
+  z-index: 3;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 999px;
+  gap: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 99.9rem;
   background: rgba(243, 230, 227, 0.92);
+  box-shadow: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.08);
   color: var(--colorTitle);
   font-family: var(--mainfont);
+  font-size: 1rem;
   font-weight: var(--fontBold);
-  font-size: 1.2rem;
   pointer-events: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-  z-index: 3;
-}
 
-.main__scrollHint::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 100%;
-  width: 8rem;
-  height: 100%;
-  background: linear-gradient(to right, rgba(245, 239, 236, 0), rgba(245, 239, 236, 0.95));
-  pointer-events: none;
-}
+  @include mixin.mq(sp) {
+    display: none;
+  }
 
-.main__scrollHintText {
-  white-space: nowrap;
-}
+  &__text {
+    white-space: nowrap;
+  }
 
-.main__scrollHintArrow {
-  font-size: 1.6rem;
-  line-height: 1;
-  animation: scrollArrowMove 1s ease-in-out infinite;
+  &__arrow {
+    font-size: 1.4rem;
+    line-height: 1;
+    animation: scrollArrowMove 1s ease-in-out infinite;
+  }
 }
 
 @keyframes scrollArrowMove {
@@ -242,24 +256,14 @@
     transform: translateX(0);
     opacity: 0.7;
   }
+
   50% {
-    transform: translateX(6px);
+    transform: translateX(0.6rem);
     opacity: 1;
   }
+
   100% {
     transform: translateX(0);
     opacity: 0.7;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .main__scrollHint {
-    right: 0.4rem;
-    font-size: 1.1rem;
-    padding: 0.7rem 1rem;
-  }
-
-  .main__scrollHint::before {
-    width: 4rem;
   }
 }
